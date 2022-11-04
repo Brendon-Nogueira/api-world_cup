@@ -1,17 +1,19 @@
 module.exports = (sequelize, DataTypes) => {
-    const Selecao = sequelize.define('selecao', {
+    const Partida = sequelize.define('partida', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        nome: DataTypes.STRING,
-        cor_uniforme: DataTypes.STRING,
-        fundacao: DataTypes.STRING
+        selecao_1: DataTypes.STRING,
+        selecao_2: DataTypes.STRING,
+        data_partida: DataTypes.DATE,
+        placar: DataTypes.STRING
+
     }, {
         timestamps: false,
         freezeTableName: true
     })
 
-    return Selecao
+    return Partida
 }
