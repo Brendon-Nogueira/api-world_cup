@@ -7,9 +7,7 @@ const create =  async data => {
 }
 
 const getAll = async () => {
-    return await partida.findAll()
-   
-    
+    return await partida.findAll()   
 }
 
 const getPartidaById =  async partidaId => {
@@ -32,10 +30,10 @@ const getPartidaByTime = async partida =>{
     })
 }
 
-const getPartidaByData = async (partida) =>{
+const getPartidaByData = async (dataPartida) =>{
     return await partida.findAll({
         where : {
-             data_partida : partida
+             dataPartida : partida
         }
     })
 }

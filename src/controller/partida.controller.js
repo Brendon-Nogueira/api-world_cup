@@ -3,7 +3,7 @@ const service = require('../service/partida.service')
 
 const create = async (req, res) => {
   await  service.create(req.body)
-    res.status(201).send('Jogo cadastradao com sucesso')
+    res.status(200).send('Jogo cadastradao com sucesso')
 }
 
 const getAll = async (req, res) => {
@@ -17,7 +17,7 @@ const getPartidaById = async (req, res) => {
 }
 
 const getPartidaByTime = async(req, res) =>{
-    const partidaTime = req.params.id
+    const partidaTime = STRING(req.params.STRING)
     res.send(await service.getPartidaByTime(partidaTime))
    
 }
