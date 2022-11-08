@@ -5,10 +5,11 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        selecao_1: DataTypes.STRING,
-        selecao_2: DataTypes.STRING,
+        time_m: DataTypes.STRING,
+        time_v: DataTypes.STRING,
         data_partida: DataTypes.DATE,
-        placar: DataTypes.STRING
+        placar_mandante: DataTypes.STRING,
+        placar_visitante : DataTypes
 
     }, {
         timestamps: false,
