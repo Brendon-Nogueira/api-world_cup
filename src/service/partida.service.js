@@ -21,7 +21,7 @@ const getPartidaById =  async partidaId => {
 }
 
 const getPartidaByTime = async partida =>{
-    return await partida.getTimeById({
+    return await partida.findAll({
         where:{
             [Op.pr] : [
                 {time_m : partida},
@@ -32,16 +32,13 @@ const getPartidaByTime = async partida =>{
     })
 }
 
-const getPartidaByData = async (partida,data_partida) =>{
-    return await partida.getPartidaByData({
+const getPartidaByData = async (partida) =>{
+    return await partida.findAll({
         where : {
-            
-         data_partida  :  partida
+             data_partida : partida
         }
     })
 }
-
-
 
 const update = async (partidaId, data) => {
     return await partida.update(data, {

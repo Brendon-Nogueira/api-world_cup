@@ -1,33 +1,36 @@
+const { STRING } = require('sequelize')
 const service = require('../service/partida.service')
 
 const create = async (req, res) => {
   await  service.create(req.body)
-    res.status(201).send('Jogo cadastrada com sucesso')
+    res.status(201).send('Jogo cadastradao com sucesso')
 }
 
 const getAll = async (req, res) => {
-    res.send( await service.getAll())
+    const lista = await service.getAll()
+    res.send(lista)
 }
 
 const getPartidaById = async (req, res) => {
     const partidaId = parseInt(req.params.id,10)
-    res.send( await service.getSelecaoById(partidaId))
+    res.send( await service.getPartidaById(partidaId))
 }
 
 const getPartidaByTime = async(req, res) =>{
-    const partidaId = req.params.id
-    await service.getPartidaByTime(partidaId, time_m, time_v, req.body)
-    res.status(200).send('Todos os jogos')
+    const partidaTime = req.params.id
+    res.send(await service.getPartidaByTime(partidaTime))
+   
 }
 
 const getPartidaByData = async(req,res) =>{
-    const partidaId = req.params.id
-    await service.getPartidaByData(partidaId, data_partida, req.body)
+    const dataPartida = STRING(req.params.date)
+    res.send(await service.getPartidaByData(dataPartida))
 }
+
 const update = async (req, res) => {
     const partidaId = req.params.id
      await service.update(partidaId, req.body)
-    res.status(200).send('Partida atualizada com sucesso')
+    res.status(200).send('Jogo atualizado com sucesso')
 }
 
 const remove = async (req, res) => {

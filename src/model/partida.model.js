@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         time_m: DataTypes.STRING,
         time_v: DataTypes.STRING,
         data_partida: DataTypes.DATE,
-        placar_mandante: DataTypes.STRING,
-        placar_visitante : DataTypes
+        placar_mandante: DataTypes.INTEGER,
+        placar_visitante : DataTypes.INTEGER
 
     }, {
         timestamps: false,
