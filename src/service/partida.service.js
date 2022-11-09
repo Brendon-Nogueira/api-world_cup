@@ -2,7 +2,6 @@ const { partida } = require('../model/index')
 const { Op } = require('sequelize')
 
 const create =  async data => {
-
     await partida.create(data)
 }
 
