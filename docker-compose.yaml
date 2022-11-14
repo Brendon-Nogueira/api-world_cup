@@ -1,0 +1,25 @@
+version: '1'
+
+services: 
+  db:
+    container_name: 'database'
+    image: postgres:10.17
+    restart: always
+    ports: 
+      - 8087:5432
+    environment: 
+      - "POSTGRES_USER=admin"
+      - "POSTGRES_PASSWORD=admin"
+      - "POSTGRES_DB=admin"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app: 
+    build: .
+    command: npm start
+    ports: 
+      - '8087:8087'
+    volumes: 
+      - .:/user/app
+    depends_on:
+      - db
