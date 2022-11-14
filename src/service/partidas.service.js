@@ -2,11 +2,11 @@ const { partida } = require('../model/index')
 const { Op } = require('sequelize')
 
 const create =  async data => {
-    await partida.create(data)
+    await partidas.create(data)
 }
 
 const getAll = async () => {
-    return await partida.findAll()   
+    return await partidas.findAll()   
 }
 
 const getPartidaById =  async partidaId => {
@@ -18,11 +18,11 @@ const getPartidaById =  async partidaId => {
 }
 
 const getPartidaByTime = async partida =>{
-    return await partida.findAll({
+    return await partidas.findAll({
         where:{
             [Op.pr] : [
-                {time_m : partida},
-                {time_v : partida}
+                {time_m : partidas},
+                {time_v : partidas}
             ]
         
         }
@@ -30,15 +30,15 @@ const getPartidaByTime = async partida =>{
 }
 
 const getPartidaByData = async (dataPartida) =>{
-    return await partida.findAll({
+    return await partidas.findAll({
         where : {
-             dataPartida : partida
+             dataPartida : partidas
         }
     })
 }
 
 const update = async (partidaId, data) => {
-    return await partida.update(data, {
+    return await partidas.update(data, {
         where: {
             id: partidaId
         }
@@ -46,7 +46,7 @@ const update = async (partidaId, data) => {
 }
 
 const remove = async partidaId => {
-    return await partida.destroy({
+    return await partidas.destroy({
         where:{
             id: partidaId
         }
