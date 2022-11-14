@@ -1,5 +1,6 @@
 const { partidas } = require('../model/index')
 const { Op } = require('sequelize')
+const { QueryTypes } = require('sequelize');
 
 
 const create =  async data => {
@@ -18,12 +19,12 @@ const getPartidaById =  async partidaId => {
     })
 }
 
-const getPartidaByTime = async partidas =>{
+const getPartidaByTime = async partida =>{
     return await partidas.findAll({
         where:{
-            [Op.pr] : [
-                {time_m : partidas},
-                {time_v : partidas}
+            [Op.or] : [
+                {time_m : partida},
+                {time_v : partida}
             ]
         
         }
@@ -32,9 +33,7 @@ const getPartidaByTime = async partidas =>{
 
 const getPartidaByData = async (dataPartida) =>{
     return await partidas.findAll({
-        where : {
-             data_partida : dataPartida
-        }
+      const : dataPartida = sequelize.query(`SELECT * from partidas where ${dataPartida} = `, {type : QueryTypes.SELECT} )
     })
 }
 

@@ -17,13 +17,13 @@ const getPartidaById = async (req, res) => {
 }
 
 const getPartidaByTime = async(req, res) =>{
-    const partidaTime = STRING(req.params.partidaTime)
+    const partidaTime = req.params.partidaTime
     res.send(await service.getPartidaByTime(partidaTime))
    
 }
 
 const getPartidaByData = async(req,res) =>{
-    const dataPartida = STRING(req.params.date)
+    const dataPartida = req.params.date
     res.send(await service.getPartidaByData(dataPartida))
 }
 

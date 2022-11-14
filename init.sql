@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS partidas (
 id integer primary key ,
 time_m varchar(50) not null,
 time_v varchar(50) not null,
-data_partida timestamp not null,
+data_partida date not null,
 placar_mandante integer not null,
 placar_visitante integer not null
 );
