@@ -1,13 +1,15 @@
-CREATE TABLE PARTIDA IF NOT EXISTS(
-ID integer primary key ,
-TIME_M varchar(50) not null,
-TIME_V varchar(50) not null,
-DATA_PARTIDA timestamp not null,
-PLACAR_MANDANTE integer not null,
-PLACAR_VISITANTE integer not null);
+CREATE TABLE IF NOT EXISTS partidas (
 
-INSERT INTO PARTIDA (ID, TIME_M, TIME_V, DATA_PARTIDA, PLACAR_MANDANTE, PLACAR_VISITANTE) VALUES (1, 'Brasil', 'Argentina', '2022-11-24', 1, 0);
-INSERT INTO PARTIDA (ID, TIME_M, TIME_V, DATA_PARTIDA, PLACAR_MANDANTE, PLACAR_VISITANTE) VALUES (2, 'França', 'Inglaterra', '2022-11-26', 4, 2);
-INSERT INTO PARTIDA (ID, TIME_M, TIME_V, DATA_PARTIDA, PLACAR_MANDANTE, PLACAR_VISITANTE) VALUES (3, 'Alemanha', 'Catar', '2022-11-29', 7, 0);
-INSERT INTO PARTIDA (ID, TIME_M, TIME_V, DATA_PARTIDA, PLACAR_MANDANTE, PLACAR_VISITANTE) VALUES (4, 'Suíça', 'Sérvia', '2022-12-01', 1, 2);
-INSERT INTO PARTIDA (ID, TIME_M, TIME_V, DATA_PARTIDA, PLACAR_MANDANTE, PLACAR_VISITANTE) VALUES (5, 'Senegal', 'Dinamarca', '2022-12-04', 1, 1);
+id integer primary key ,
+time_m varchar(50) not null,
+time_v varchar(50) not null,
+data_partida timestamp not null,
+placar_mandante integer not null,
+placar_visitante integer not null
+);
+
+INSERT INTO partidas (id, time_m, time_v, data_partida, placar_mandante, placar_visitante) VALUES (1, 'Brasil', 'Argentina', '2022-11-24', 1, 0);
+INSERT INTO partidas (id, time_m, time_v, data_partida, placar_mandante, placar_visitante) VALUES (2, 'França', 'Inglaterra', '2022-11-26', 4, 2);
+INSERT INTO partidas (id, time_m, time_v, data_partida, placar_mandante, placar_visitante) VALUES (3, 'Alemanha', 'Catar', '2022-11-29', 7, 0);
+INSERT INTO partidas (id, time_m, time_v, data_partida, placar_mandante, placar_visitante) VALUES (4, 'Suíça', 'Sérvia', '2022-12-01', 1, 2);
+INSERT INTO partidas (id, time_m, time_v, data_partida, placar_mandante, placar_visitante) VALUES (5, 'Senegal', 'Dinamarca', '2022-12-04', 1, 1);
