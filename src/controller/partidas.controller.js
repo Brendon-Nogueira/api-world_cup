@@ -1,5 +1,5 @@
 const { STRING } = require('sequelize')
-const service = require('../service/partida.service')
+const service = require('../service/partidas.service')
 
 const create = async (req, res) => {
   await  service.create(req.body)
