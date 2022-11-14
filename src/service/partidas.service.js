@@ -1,4 +1,4 @@
-const { partida } = require('../model/index')
+const { partidas } = require('../model/index')
 const { Op } = require('sequelize')
 
 const create =  async data => {
