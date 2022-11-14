@@ -4,5 +4,5 @@ module.exports = {
     database: 'admin',
     host: 'database',
     dialect: 'postgres',
-    port: '5433'
+    port: '5440'
 }
