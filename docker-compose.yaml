@@ -1,4 +1,4 @@
-version: '1'
+version: '3'
 
 services: 
   db:
@@ -6,7 +6,7 @@ services:
     image: postgres:10.17
     restart: always
     ports: 
-      - 5440:5432
+      - 5444:5432
     environment: 
       - "POSTGRES_USER=admin"
       - "POSTGRES_PASSWORD=admin"

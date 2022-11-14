@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const partidas = sequelize.define('partidas', {
+    const Partidas = sequelize.define('partidas', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -16,5 +16,5 @@ module.exports = (sequelize, DataTypes) => {
         freezeTableName: true
     })
 
-    return partidas
+    return Partidas
 }

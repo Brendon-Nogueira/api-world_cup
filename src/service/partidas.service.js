@@ -1,6 +1,7 @@
 const { partidas } = require('../model/index')
 const { Op } = require('sequelize')
 
+
 const create =  async data => {
     await partidas.create(data)
 }
@@ -10,7 +11,7 @@ const getAll = async () => {
 }
 
 const getPartidaById =  async partidaId => {
-    return await partidaId.findAll({
+    return await partidas.findAll({
         where: {
             id : partidaId
         }
@@ -29,10 +30,10 @@ const getPartidaByTime = async partidas =>{
     })
 }
 
-const getPartidaByData = async (data_partida) =>{
+const getPartidaByData = async (dataPartida) =>{
     return await partidas.findAll({
         where : {
-             data_partida : partidas
+             data_partida : dataPartida
         }
     })
 }
