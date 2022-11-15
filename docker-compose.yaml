@@ -15,7 +15,8 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   app: 
-    build: .
+    image: brendonasn/api_world-cup:1.0.0
+    
     command: npm start
     ports: 
       - '8087:8087'

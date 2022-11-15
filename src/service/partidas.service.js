@@ -1,6 +1,6 @@
 const { partidas } = require('../model/index')
-const { Op } = require('sequelize')
-const { QueryTypes } = require('sequelize');
+const { Op, where } = require('sequelize')
+
 
 
 const create =  async data => {
@@ -32,11 +32,15 @@ const getPartidaByTime = async partida =>{
 }
 
 const getPartidaByData = async (dataPartida) =>{
-    return await partidas.findAll({
-      const : dataPartida = sequelize.query(`SELECT * from partidas where ${dataPartida} = `, {type : QueryTypes.SELECT} )
+    return await partidas.findAll(dataPartida,{
+     where: {
+        dataPartida :{
+            [Op.gte]: new Date(),
+            [Op.lte]: new Date(Date.now() + 24 * 60 * 60 * 1000)
+        }
+     }
     })
 }
-
 const update = async (partidaId, data) => {
     return await partidas.update(data, {
         where: {

@@ -27,6 +27,8 @@ const getPartidaByData = async(req,res) =>{
     res.send(await service.getPartidaByData(dataPartida))
 }
 
+
+
 const update = async (req, res) => {
     const partidaId = req.params.id
      await service.update(partidaId, req.body)
