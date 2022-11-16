@@ -50,13 +50,13 @@
 
   A API tem algumas funções básicas conforme requisitos do projeto. Isso incluí:
   
-  - **Criação de partidas;
-  - **Atualização de partidas;
-  - **Remoção de partidas;
-  - **Listagem de todas as partidas;
-  - **Listagem de uma partida específica;
-  - **Listagem de partidas por dia;
-  - **Listagem de partidas por seleção.
+  - **Criação de partidas;**
+  - **Atualização de partidas;**
+  - **Remoção de partidas;**
+  - **Listagem de todas as partidas;**
+  - **Listagem de uma partida específica;**
+  - **Listagem de partidas por dia;**
+  - **Listagem de partidas por seleção.**
 
   Segue abaixo como requisitar cada funcionalidade. Todas elas funcionam através de endpoints.
   
